@@ -13,7 +13,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${LIBS_DIR})
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 # Add src
-set(TEST_MODULE testModule)
+set(TEST_MODULE libTestModule)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/test-manager)
 
 # Add test

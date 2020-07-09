@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-include_directories(${SOURCE_DIR}/qtSeedDb ${SOURCE_DIR}/qtSeedComms ${SOURCE_DIR}/qtSeedApp)
+include_directories(${SOURCE_DIR}/test-manager)
 
-add_executable(TestModule TestComms.cpp)
-target_link_libraries(TestComms qtSeedComms qtSeedDb)
+add_executable(TestModuleTest main.cpp)
+target_link_libraries(TestModuleTest libTestModule)
