@@ -1,8 +1,8 @@
 #include "Test.h"
 
-class Biochemistry : public Test {
+class Hematology : public Test {
  public:
-  Biochemistry();
+  Hematology();
 
  private:
   TestType m_type;
