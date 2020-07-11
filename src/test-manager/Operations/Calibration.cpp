@@ -2,12 +2,11 @@
 
 #include <iostream>
 
-Calibration::Calibration() {}
-
+Calibration::Calibration(ITest* test) : m_test(test) {}
 Calibration::~Calibration() {}
 
-void Calibration::PerformOperation(const TestType &type) {
-  switch (type) {
+void Calibration::PerformOperation() {
+  switch (m_test->GetTestType()) {
     case TestType::BIOCHEMISTRY:
       PerformBio();
       break;
@@ -21,7 +20,7 @@ void Calibration::PerformOperation(const TestType &type) {
 }
 
 void Calibration::PerformRegularOperation() {
-  std::cout << "Calibration regular operation" << std::endl;
+  std::cout << "Calibration regular test operation" << std::endl;
 }
 void Calibration::PerformBio() {
   std::cout << "Calibration microbiology operation" << std::endl;

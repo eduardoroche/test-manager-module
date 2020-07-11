@@ -5,12 +5,16 @@
 class Calculation : public IOperation {
  public:
   Calculation();
+  Calculation(ITest *test);
   ~Calculation();
 
-  void PerformOperation(const TestType &type) override;
+  void PerformOperation() override;
 
  private:
   void PerformRegularOperation();
   void PerformMicro();
   void PerformHemato();
+
+ private:
+  ITest *m_test;
 };

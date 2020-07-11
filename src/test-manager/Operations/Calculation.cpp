@@ -2,11 +2,11 @@
 
 #include <iostream>
 
-Calculation::Calculation() {}
+Calculation::Calculation(ITest* test) : m_test(test) {}
 Calculation::~Calculation() {}
 
-void Calculation::PerformOperation(const TestType &type) {
-  switch (type) {
+void Calculation::PerformOperation() {
+  switch (m_test->GetTestType()) {
     case TestType::HEMATOLOGY:
       PerformHemato();
       break;
@@ -20,7 +20,7 @@ void Calculation::PerformOperation(const TestType &type) {
 }
 
 void Calculation::PerformRegularOperation() {
-  std::cout << "Calculation regular operation" << std::endl;
+  std::cout << "Calculation regular test operation" << std::endl;
 }
 void Calculation::PerformMicro() {
   std::cout << "Calculation microbiology operation" << std::endl;
