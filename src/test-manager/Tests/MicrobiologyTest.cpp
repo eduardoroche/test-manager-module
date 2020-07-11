@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-MicrobiologyTest::MicrobiologyTest() : m_type(TestType::MICROBIOLOGY){};
+MicrobiologyTest::MicrobiologyTest() : m_type(TestType::MICROBIOLOGY) {
+  std::cout << "New Microbiology test created" << std::endl;
+};
 MicrobiologyTest::~MicrobiologyTest() {}
 
 TestType MicrobiologyTest::GetTestType() { return m_type; }

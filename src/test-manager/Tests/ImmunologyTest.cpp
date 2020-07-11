@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-ImmunologyTest::ImmunologyTest() : m_type(TestType::IMMUNOLOGY){};
+ImmunologyTest::ImmunologyTest() : m_type(TestType::IMMUNOLOGY) {
+  std::cout << "New Immunology test created" << std::endl;
+};
 ImmunologyTest::~ImmunologyTest() {}
 
 TestType ImmunologyTest::GetTestType() { return m_type; }

@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-BiochemistryTest::BiochemistryTest() : m_type(TestType::BIOCHEMISTRY){};
+BiochemistryTest::BiochemistryTest() : m_type(TestType::BIOCHEMISTRY) {
+  std::cout << "New Biochemistry test created" << std::endl;
+};
 BiochemistryTest::~BiochemistryTest() {}
 
 TestType BiochemistryTest::GetTestType() { return m_type; }
