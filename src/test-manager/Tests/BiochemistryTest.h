@@ -9,9 +9,9 @@ class BiochemistryTest : public Test {
 
   void accept(Operation *op) const override;
 
-  std::string GetPropertyA() override;
-  std::string GetPropertyB() override;
-  std::string GetPropertyBio();
+  std::string GetPropertyA() const override;
+  std::string GetPropertyB() const override;
+  std::string GetPropertyBio() const;
   void SetPropertyA(const std::string &propA) override;
   void SetPropertyB(const std::string &propB) override;
   void SetPropertyBio(const std::string &propBio);

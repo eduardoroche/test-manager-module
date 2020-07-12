@@ -6,10 +6,10 @@
 #include "Tests/ImmunologyTest.h"
 #include "Tests/MicrobiologyTest.h"
 
-class Calibration : public Operation {
+class Quality : public Operation {
  public:
-  Calibration();
-  ~Calibration();
+  Quality();
+  ~Quality();
 
   void visit(const BiochemistryTest *test) const override;
   void visit(const HematologyTest *test) const override;

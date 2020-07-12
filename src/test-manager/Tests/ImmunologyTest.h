@@ -2,22 +2,22 @@
 
 #include "Test.h"
 
-class HematologyTest : public Test {
+class ImmunologyTest : public Test {
  public:
-  HematologyTest();
-  ~HematologyTest();
+  ImmunologyTest();
+  ~ImmunologyTest();
 
   void accept(Operation *op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;
-  std::string GetPropertyHema() const;
+  std::string GetPropertyImmu() const;
   void SetPropertyA(const std::string &propA) override;
   void SetPropertyB(const std::string &propB) override;
-  void SetPropertyHema(const std::string &propHema);
+  void SetPropertyImmu(const std::string &propImmu);
 
  private:
   std::string m_propA;
   std::string m_propB;
-  std::string m_propHema;
+  std::string m_propImmu;
 };
