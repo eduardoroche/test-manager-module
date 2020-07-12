@@ -5,28 +5,40 @@
 Quality::Quality() {}
 Quality::~Quality() {}
 
-void Quality::visit(const BiochemistryTest *test) const { PerformOp(test); }
-void Quality::visit(const HematologyTest *test) const { PerformOp(test); }
-void Quality::visit(const ImmunologyTest *test) const { PerformOp(test); }
-void Quality::visit(const MicrobiologyTest *test) const { PerformOp(test); }
+bool Quality::visit(const BiochemistryTest *test) const {
+  return PerformOp(test);
+}
+bool Quality::visit(const HematologyTest *test) const {
+  return PerformOp(test);
+}
+bool Quality::visit(const ImmunologyTest *test) const {
+  return PerformOp(test);
+}
+bool Quality::visit(const MicrobiologyTest *test) const {
+  return PerformOp(test);
+}
 
-void Quality::PerformOp(const BiochemistryTest *test) const {
+bool Quality::PerformOp(const BiochemistryTest *test) const {
   std::cout << "Performing Quality on a Biochemistry test. Properties: "
             << test->GetPropertyA() << ", " << test->GetPropertyB() << " and "
             << test->GetPropertyBio() << std::endl;
+  return true;
 }
-void Quality::PerformOp(const HematologyTest *test) const {
+bool Quality::PerformOp(const HematologyTest *test) const {
   std::cout << "Performing Quality on a Hematology test. Properties: "
             << test->GetPropertyA() << ", " << test->GetPropertyB() << " and "
             << test->GetPropertyHema() << std::endl;
+  return true;
 }
-void Quality::PerformOp(const ImmunologyTest *test) const {
+bool Quality::PerformOp(const ImmunologyTest *test) const {
   std::cout << "Performing Quality on a Immunology test. Properties: "
             << test->GetPropertyA() << ", " << test->GetPropertyB() << " and "
             << test->GetPropertyImmu() << std::endl;
+  return true;
 }
-void Quality::PerformOp(const MicrobiologyTest *test) const {
+bool Quality::PerformOp(const MicrobiologyTest *test) const {
   std::cout << "Performing Quality on a Microbiology test. Properties: "
             << test->GetPropertyA() << ", " << test->GetPropertyB() << " and "
             << test->GetPropertyMicro() << std::endl;
+  return true;
 }

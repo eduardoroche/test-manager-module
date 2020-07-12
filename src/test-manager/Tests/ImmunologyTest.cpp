@@ -8,7 +8,7 @@ ImmunologyTest::ImmunologyTest() {
 };
 ImmunologyTest::~ImmunologyTest() {}
 
-void ImmunologyTest::accept(Operation *op) const { op->visit(this); }
+bool ImmunologyTest::accept(Operation *op) const { return op->visit(this); }
 
 std::string ImmunologyTest::GetPropertyA() const { return m_propA; }
 std::string ImmunologyTest::GetPropertyB() const { return m_propB; }

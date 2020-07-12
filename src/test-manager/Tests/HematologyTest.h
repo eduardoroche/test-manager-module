@@ -7,7 +7,7 @@ class HematologyTest : public Test {
   HematologyTest();
   ~HematologyTest();
 
-  void accept(Operation *op) const override;
+  bool accept(Operation *op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;

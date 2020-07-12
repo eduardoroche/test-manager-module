@@ -1,6 +1,8 @@
 #include "Order.h"
 
-Order::Order(const Sample &sample) : m_sample(sample) {}
+#include <iostream>
+
+Order::Order(const Sample &sample) : m_results(true), m_sample(sample) {}
 Order::~Order() {}
 
 void Order::AddOperationForTest(pTest test, pOperation op) {
@@ -9,6 +11,10 @@ void Order::AddOperationForTest(pTest test, pOperation op) {
 
 void Order::RunOperations() {
   for (auto op : m_operations) {
-    std::get<0>(op)->accept(std::get<1>(op).get());
+    if (!std::get<0>(op)->accept(std::get<1>(op).get())) {
+      m_results = false;
+    }
   }
 }
+
+bool Order::GetResults() const { return m_results; }

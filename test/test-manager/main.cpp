@@ -33,6 +33,11 @@ void OrderWithOneTest(const Sample &sample) {
   // Run order
   std::cout << "Running order operations!" << std::endl;
   order.RunOperations();
+
+  // Check order results
+  std::cout << "Operations "
+            << ((order.GetResults()) ? "finished successfully!" : "failed!")
+            << std::endl;
 }
 
 void OrderWithTwoDifferentTest(const Sample &sample) {
@@ -71,6 +76,11 @@ void OrderWithTwoDifferentTest(const Sample &sample) {
   // Run order
   std::cout << "Running order operations:" << std::endl;
   order.RunOperations();
+
+  // Check order results
+  std::cout << "Operations "
+            << ((order.GetResults()) ? "finished successfully!" : "failed!")
+            << std::endl;
 }
 
 void OrderWithTwoEqualTest(const Sample &sample) {
@@ -109,6 +119,11 @@ void OrderWithTwoEqualTest(const Sample &sample) {
   // Run order
   std::cout << "Running order operations:" << std::endl;
   order.RunOperations();
+
+  // Check order results
+  std::cout << "Operations "
+            << ((order.GetResults()) ? "finished successfully!" : "failed!")
+            << std::endl;
 }
 
 int main() {

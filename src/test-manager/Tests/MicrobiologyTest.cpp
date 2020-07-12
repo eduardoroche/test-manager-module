@@ -8,7 +8,7 @@ MicrobiologyTest::MicrobiologyTest() {
 };
 MicrobiologyTest::~MicrobiologyTest() {}
 
-void MicrobiologyTest::accept(Operation *op) const { op->visit(this); }
+bool MicrobiologyTest::accept(Operation *op) const { return op->visit(this); }
 
 std::string MicrobiologyTest::GetPropertyA() const { return m_propA; }
 std::string MicrobiologyTest::GetPropertyB() const { return m_propB; }

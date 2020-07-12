@@ -8,7 +8,7 @@ BiochemistryTest::BiochemistryTest() {
 };
 BiochemistryTest::~BiochemistryTest() {}
 
-void BiochemistryTest::accept(Operation *op) const { op->visit(this); }
+bool BiochemistryTest::accept(Operation *op) const { return op->visit(this); }
 
 std::string BiochemistryTest::GetPropertyA() const { return m_propA; }
 std::string BiochemistryTest::GetPropertyB() const { return m_propB; }

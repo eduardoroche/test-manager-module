@@ -21,10 +21,12 @@ class Order {
   typedef std::shared_ptr<Test> pTest;
   typedef std::shared_ptr<Operation> pOperation;
 
+  bool GetResults() const;
   void AddOperationForTest(pTest, pOperation);
   void RunOperations();
 
  private:
+  bool m_results;
   Sample m_sample;
   std::vector<std::tuple<pTest, pOperation>> m_operations;
 };

@@ -6,7 +6,7 @@
 
 class Test {
  public:
-  virtual void accept(Operation *op) const = 0;
+  virtual bool accept(Operation *op) const = 0;
 
   virtual std::string GetPropertyA() const = 0;
   virtual std::string GetPropertyB() const = 0;

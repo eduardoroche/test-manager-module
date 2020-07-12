@@ -11,14 +11,14 @@ class Calculation : public Operation {
   Calculation();
   ~Calculation();
 
-  void visit(const BiochemistryTest *test) const override;
-  void visit(const HematologyTest *test) const override;
-  void visit(const ImmunologyTest *test) const override;
-  void visit(const MicrobiologyTest *test) const override;
+  bool visit(const BiochemistryTest *test) const override;
+  bool visit(const HematologyTest *test) const override;
+  bool visit(const ImmunologyTest *test) const override;
+  bool visit(const MicrobiologyTest *test) const override;
 
  private:
-  void PerformOp(const BiochemistryTest *test) const;
-  void PerformOp(const HematologyTest *test) const;
-  void PerformOp(const ImmunologyTest *test) const;
-  void PerformOp(const MicrobiologyTest *test) const;
+  bool PerformOp(const BiochemistryTest *test) const;
+  bool PerformOp(const HematologyTest *test) const;
+  bool PerformOp(const ImmunologyTest *test) const;
+  bool PerformOp(const MicrobiologyTest *test) const;
 };

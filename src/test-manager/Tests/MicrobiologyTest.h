@@ -7,7 +7,7 @@ class MicrobiologyTest : public Test {
   MicrobiologyTest();
   ~MicrobiologyTest();
 
-  void accept(Operation *op) const override;
+  bool accept(Operation *op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;
