@@ -3,16 +3,12 @@
 Order::Order(const Sample &sample) : m_sample(sample) {}
 Order::~Order() {}
 
-void Order::AddTestToOrder(std::shared_ptr<ITest> test) {
-  m_tests.push_back(test);
-}
-
-void Order::AddOperationToOrder(std::shared_ptr<IOperation> operation) {
-  m_operations.push_back(operation);
+void Order::AddOperationForTest(pTest test, pOperation op) {
+  m_operations.push_back(std::make_tuple(test, op));
 }
 
 void Order::RunOperations() {
   for (auto op : m_operations) {
-    op->PerformOperation();
+    std::get<0>(op)->accept(std::get<1>(op).get());
   }
 }

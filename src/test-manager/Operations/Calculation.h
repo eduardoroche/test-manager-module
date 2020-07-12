@@ -1,25 +1,23 @@
 #pragma once
 
-#include "IOperation.h"
+#include "Operation.h"
 #include "Tests/BiochemistryTest.h"
 #include "Tests/HematologyTest.h"
-#include "Tests/ImmunologyTest.h"
-#include "Tests/MicrobiologyTest.h"
 
-class Calculation : public IOperation {
+class Calculation : public Operation {
  public:
   Calculation();
-  Calculation(std::shared_ptr<ITest> test);
   ~Calculation();
 
-  void PerformOperation() override;
+  void visit(const BiochemistryTest *test) const override;
+  void visit(const HematologyTest *test) const override;
 
  private:
   void PerformCalculation(BiochemistryTest *test);
-  void PerformCalculation(HematologyTest *test);
-  void PerformCalculation(ImmunologyTest *test);
-  void PerformCalculation(MicrobiologyTest *test);
+  //  void PerformCalculation(HematologyTest *test);
+  //  void PerformCalculation(ImmunologyTest *test);
+  //  void PerformCalculation(MicrobiologyTest *test);
 
- private:
-  std::shared_ptr<ITest> m_test;
+  //  private:
+  //  std::shared_ptr<ITest> m_test;
 };

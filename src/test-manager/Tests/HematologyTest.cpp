@@ -8,6 +8,8 @@ HematologyTest::HematologyTest() {
 };
 HematologyTest::~HematologyTest() {}
 
+void HematologyTest::accept(Operation *op) const { op->visit(this); }
+
 std::string HematologyTest::GetPropertyA() { return m_propA; }
 std::string HematologyTest::GetPropertyB() { return m_propB; }
 std::string HematologyTest::GetPropertyHema() { return m_propHema; }

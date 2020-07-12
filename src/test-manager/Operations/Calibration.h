@@ -1,25 +1,23 @@
 #pragma once
 
-#include "IOperation.h"
+#include "Operation.h"
 #include "Tests/BiochemistryTest.h"
 #include "Tests/HematologyTest.h"
-#include "Tests/ImmunologyTest.h"
-#include "Tests/MicrobiologyTest.h"
 
-class Calibration : public IOperation {
+class Calibration : public Operation {
  public:
   Calibration();
-  Calibration(std::shared_ptr<ITest> test);
   ~Calibration();
 
-  void PerformOperation() override;
+  void visit(const BiochemistryTest *test) const override;
+  void visit(const HematologyTest *test) const override;
 
  private:
   void PerformCalibration(BiochemistryTest *test);
-  void PerformCalibration(HematologyTest *test);
-  void PerformCalibration(ImmunologyTest *test);
-  void PerformCalibration(MicrobiologyTest *test);
+  //  void PerformCalibration(HematologyTest *test);
+  //  void PerformCalibration(ImmunologyTest *test);
+  //  void PerformCalibration(MicrobiologyTest *test);
 
- private:
-  std::shared_ptr<ITest> m_test;
+  // private:
+  //  std::shared_ptr<ITest> m_test;
 };

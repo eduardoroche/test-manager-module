@@ -2,10 +2,11 @@
 
 #include <string>
 
-class ITest {
+#include "Operations/Operation.h"
+
+class Test {
  public:
-  ITest() = default;
-  virtual ~ITest() = default;
+  virtual void accept(Operation *op) const = 0;
 
   virtual std::string GetPropertyA() = 0;
   virtual std::string GetPropertyB() = 0;
