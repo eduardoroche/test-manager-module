@@ -1,20 +1,25 @@
 #pragma once
 
 #include "IOperation.h"
+#include "Tests/BiochemistryTest.h"
+#include "Tests/HematologyTest.h"
+#include "Tests/ImmunologyTest.h"
+#include "Tests/MicrobiologyTest.h"
 
 class Calibration : public IOperation {
  public:
   Calibration();
-  Calibration(ITest *test);
+  Calibration(std::shared_ptr<ITest> test);
   ~Calibration();
 
   void PerformOperation() override;
 
  private:
-  void PerformRegularOperation();
-  void PerformBio();
-  void PerformImmuno();
+  void PerformCalibration(BiochemistryTest *test);
+  void PerformCalibration(HematologyTest *test);
+  void PerformCalibration(ImmunologyTest *test);
+  void PerformCalibration(MicrobiologyTest *test);
 
  private:
-  ITest *m_test;
+  std::shared_ptr<ITest> m_test;
 };

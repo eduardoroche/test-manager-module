@@ -3,24 +3,23 @@
 #include <iostream>
 #include <string>
 
-MicrobiologyTest::MicrobiologyTest() : m_type(TestType::MICROBIOLOGY) {
+MicrobiologyTest::MicrobiologyTest() {
   std::cout << "New Microbiology test created" << std::endl;
 };
 MicrobiologyTest::~MicrobiologyTest() {}
 
-TestType MicrobiologyTest::GetTestType() { return m_type; }
+std::string MicrobiologyTest::GetPropertyA() { return m_propA; }
+std::string MicrobiologyTest::GetPropertyB() { return m_propB; }
+std::string MicrobiologyTest::GetPropertyMicro() { return m_propMicro; }
 
 void MicrobiologyTest::SetPropertyA(const std::string &propA) {
-  std::cout << "Biochemistry set common test property A: " << propA
-            << std::endl;
+  m_propA = propA;
 }
 
 void MicrobiologyTest::SetPropertyB(const std::string &propB) {
-  std::cout << "Biochemistry set common test property B: " << propB
-            << std::endl;
+  m_propB = propB;
 }
 
 void MicrobiologyTest::SetPropertyMicro(const std::string &propMicro) {
-  std::cout << "Biochemistry set specific test property Bio: " << propMicro
-            << std::endl;
+  m_propMicro = propMicro;
 }

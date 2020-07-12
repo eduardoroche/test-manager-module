@@ -7,7 +7,7 @@
 class IOperation {
  public:
   IOperation() = default;
-  IOperation(ITest *test);
+  IOperation(std::shared_ptr<ITest> test);
   virtual ~IOperation() = default;
 
   virtual void PerformOperation() = 0;

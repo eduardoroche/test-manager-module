@@ -3,24 +3,23 @@
 #include <iostream>
 #include <string>
 
-BiochemistryTest::BiochemistryTest() : m_type(TestType::BIOCHEMISTRY) {
+BiochemistryTest::BiochemistryTest() {
   std::cout << "New Biochemistry test created" << std::endl;
 };
 BiochemistryTest::~BiochemistryTest() {}
 
-TestType BiochemistryTest::GetTestType() { return m_type; }
+std::string BiochemistryTest::GetPropertyA() { return m_propA; }
+std::string BiochemistryTest::GetPropertyB() { return m_propB; }
+std::string BiochemistryTest::GetPropertyBio() { return m_propBio; }
 
 void BiochemistryTest::SetPropertyA(const std::string &propA) {
-  std::cout << "Biochemistry set common test property A: " << propA
-            << std::endl;
+  m_propA = propA;
 }
 
 void BiochemistryTest::SetPropertyB(const std::string &propB) {
-  std::cout << "Biochemistry set common test property B: " << propB
-            << std::endl;
+  m_propB = propB;
 }
 
 void BiochemistryTest::SetPropertyBio(const std::string &propBio) {
-  std::cout << "Biochemistry set specific test property Bio: " << propBio
-            << std::endl;
+  m_propBio = propBio;
 }

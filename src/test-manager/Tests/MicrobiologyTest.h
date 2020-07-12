@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ITest.h"
 
 class MicrobiologyTest : public ITest {
@@ -5,11 +7,15 @@ class MicrobiologyTest : public ITest {
   MicrobiologyTest();
   ~MicrobiologyTest();
 
-  TestType GetTestType() override;
+  std::string GetPropertyA() override;
+  std::string GetPropertyB() override;
+  std::string GetPropertyMicro();
   void SetPropertyA(const std::string &propA) override;
   void SetPropertyB(const std::string &propB) override;
   void SetPropertyMicro(const std::string &propMicro);
 
  private:
-  TestType m_type;
+  std::string m_propA;
+  std::string m_propB;
+  std::string m_propMicro;
 };

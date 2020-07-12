@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 #include "Operations/Calculation.h"
 #include "Operations/Calibration.h"
@@ -16,15 +17,15 @@ void OrderWithOneTest(const Sample &sample) {
   Order order(sample);
 
   // Add immu test
-  ImmunologyTest *immu = new ImmunologyTest();
-  immu->SetPropertyA("propA");
-  immu->SetPropertyB("propB");
-  immu->SetPropertyImmu("propImmu");
+  std::shared_ptr<ImmunologyTest> immu = std::make_shared<ImmunologyTest>();
+  immu->SetPropertyA("A");
+  immu->SetPropertyB("B");
+  immu->SetPropertyImmu("Immu");
   order.AddTestToOrder(immu);
 
   // Add operations to Immunology test
-  Calculation *calc = new Calculation(immu);
-  Calibration *cali = new Calibration(immu);
+  std::shared_ptr<Calculation> calc = std::make_shared<Calculation>(immu);
+  std::shared_ptr<Calibration> cali = std::make_shared<Calibration>(immu);
   order.AddOperationToOrder(calc);
   order.AddOperationToOrder(cali);
 
@@ -40,28 +41,29 @@ void OrderWithTwoTest(const Sample &sample) {
   Order order(sample);
 
   // Add bio test
-  BiochemistryTest *bio = new BiochemistryTest();
-  bio->SetPropertyA("propA");
-  bio->SetPropertyB("propB");
-  bio->SetPropertyBio("propBio");
+  std::shared_ptr<BiochemistryTest> bio = std::make_shared<BiochemistryTest>();
+  bio->SetPropertyA("A");
+  bio->SetPropertyB("B");
+  bio->SetPropertyBio("Bio");
   order.AddTestToOrder(bio);
 
   // Add operations to Biology test
-  Calculation *calcBio = new Calculation(bio);
+
+  std::shared_ptr<Calculation> calcBio = std::make_shared<Calculation>(bio);
   order.AddOperationToOrder(calcBio);
 
   // Add bio test
-  HematologyTest *hema = new HematologyTest();
-  hema->SetPropertyA("propA");
-  hema->SetPropertyB("propB");
-  hema->SetPropertyHema("propHema");
+  std::shared_ptr<HematologyTest> hema = std::make_shared<HematologyTest>();
+  hema->SetPropertyA("A2");
+  hema->SetPropertyB("B2");
+  hema->SetPropertyHema("Hema");
   order.AddTestToOrder(hema);
 
   // Add operations to Hematology test
-  Calculation *calcHema = new Calculation(hema);
+  std::shared_ptr<Calculation> calcHema = std::make_shared<Calculation>(hema);
   order.AddOperationToOrder(calcHema);
-  Calibration *calHema = new Calibration(hema);
-  order.AddOperationToOrder(calHema);
+  std::shared_ptr<Calibration> calibHema = std::make_shared<Calibration>(hema);
+  order.AddOperationToOrder(calibHema);
 
   // Run order
   std::cout << "Running order operations:" << std::endl;
