@@ -1,14 +1,15 @@
 #include "BiochemistryTest.h"
 
 #include <iostream>
-#include <string>
 
 BiochemistryTest::BiochemistryTest() {
   std::cout << "New Biochemistry test created" << std::endl;
 };
 BiochemistryTest::~BiochemistryTest() {}
 
-void BiochemistryTest::accept(IOperation *op) const { op->visit(this); }
+void BiochemistryTest::accept(std::shared_ptr<IOperation> op) const {
+  op->visit(this);
+}
 
 std::string BiochemistryTest::GetPropertyA() const { return m_propA; }
 std::string BiochemistryTest::GetPropertyB() const { return m_propB; }

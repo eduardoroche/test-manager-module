@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <string>
 
 #include "Operations/IOperation.h"
@@ -9,7 +10,7 @@ class ITest {
   ITest() = default;
   ~ITest() = default;
 
-  virtual void accept(IOperation *op) const = 0;
+  virtual void accept(std::shared_ptr<IOperation> op) const = 0;
 
   virtual std::string GetPropertyA() const = 0;
   virtual std::string GetPropertyB() const = 0;

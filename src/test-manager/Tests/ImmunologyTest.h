@@ -7,7 +7,7 @@ class ImmunologyTest : public ITest {
   ImmunologyTest();
   ~ImmunologyTest();
 
-  void accept(IOperation *op) const override;
+  void accept(std::shared_ptr<IOperation> op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;

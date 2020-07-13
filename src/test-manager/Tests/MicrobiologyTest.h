@@ -7,7 +7,7 @@ class MicrobiologyTest : public ITest {
   MicrobiologyTest();
   ~MicrobiologyTest();
 
-  void accept(IOperation *op) const override;
+  void accept(std::shared_ptr<IOperation> op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;

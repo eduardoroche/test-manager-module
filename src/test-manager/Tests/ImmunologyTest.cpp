@@ -1,14 +1,15 @@
 #include "ImmunologyTest.h"
 
 #include <iostream>
-#include <string>
 
 ImmunologyTest::ImmunologyTest() {
   std::cout << "New Immunology test created" << std::endl;
 };
 ImmunologyTest::~ImmunologyTest() {}
 
-void ImmunologyTest::accept(IOperation *op) const { op->visit(this); }
+void ImmunologyTest::accept(std::shared_ptr<IOperation> op) const {
+  op->visit(this);
+}
 
 std::string ImmunologyTest::GetPropertyA() const { return m_propA; }
 std::string ImmunologyTest::GetPropertyB() const { return m_propB; }

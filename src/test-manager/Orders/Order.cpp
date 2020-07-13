@@ -7,5 +7,5 @@ Order::~Order() {}
 
 void Order::RunOperationsForTest(std::shared_ptr<ITest> op,
                                  std::shared_ptr<IOperation> test) {
-  op->accept(test.get());
+  op->accept(test);
 }
