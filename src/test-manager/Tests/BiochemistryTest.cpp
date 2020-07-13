@@ -7,8 +7,8 @@ BiochemistryTest::BiochemistryTest() {
 };
 BiochemistryTest::~BiochemistryTest() {}
 
-void BiochemistryTest::accept(std::shared_ptr<IOperation> op) const {
-  op->visit(this);
+void BiochemistryTest::Accept(std::shared_ptr<IOperation> op) const {
+  op->Visit(this);
 }
 
 std::string BiochemistryTest::GetPropertyA() const { return m_propA; }

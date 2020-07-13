@@ -11,8 +11,8 @@ class Calibration : public IOperation {
   Calibration();
   ~Calibration();
 
-  void visit(const BiochemistryTest *test) const override;
-  void visit(const HematologyTest *test) const override;
-  void visit(const ImmunologyTest *test) const override;
-  void visit(const MicrobiologyTest *test) const override;
+  void Visit(const BiochemistryTest *test) const override;
+  void Visit(const HematologyTest *test) const override;
+  void Visit(const ImmunologyTest *test) const override;
+  void Visit(const MicrobiologyTest *test) const override;
 };

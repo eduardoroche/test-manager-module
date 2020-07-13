@@ -7,8 +7,8 @@ HematologyTest::HematologyTest() {
 };
 HematologyTest::~HematologyTest() {}
 
-void HematologyTest::accept(std::shared_ptr<IOperation> op) const {
-  op->visit(this);
+void HematologyTest::Accept(std::shared_ptr<IOperation> op) const {
+  op->Visit(this);
 }
 
 std::string HematologyTest::GetPropertyA() const { return m_propA; }

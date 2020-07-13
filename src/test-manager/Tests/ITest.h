@@ -10,7 +10,7 @@ class ITest {
   ITest() = default;
   ~ITest() = default;
 
-  virtual void accept(std::shared_ptr<IOperation> op) const = 0;
+  virtual void Accept(std::shared_ptr<IOperation> op) const = 0;
 
   virtual std::string GetPropertyA() const = 0;
   virtual std::string GetPropertyB() const = 0;

@@ -7,7 +7,7 @@ class BiochemistryTest : public ITest {
   BiochemistryTest();
   ~BiochemistryTest();
 
-  void accept(std::shared_ptr<IOperation> op) const override;
+  void Accept(std::shared_ptr<IOperation> op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;
