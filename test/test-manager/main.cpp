@@ -22,22 +22,14 @@ void OrderWithOneTest(const Sample &sample) {
   bio->SetPropertyB("B");
   bio->SetPropertyBio("Bio");
 
+  std::cout << "Running order operations!" << std::endl;
   // Add calculation to Biochemistry test
   std::shared_ptr<Calculation> calcul = std::make_shared<Calculation>();
-  order.AddOperationForTest(bio, calcul);
+  order.RunOperationsForTest(bio, calcul);
 
   // Add calibration to Biochemistry test
   std::shared_ptr<Calibration> cali = std::make_shared<Calibration>();
-  order.AddOperationForTest(bio, cali);
-
-  // Run order
-  std::cout << "Running order operations!" << std::endl;
-  order.RunOperations();
-
-  // Check order results
-  std::cout << "Operations "
-            << ((order.GetResults()) ? "finished successfully!" : "failed!")
-            << std::endl;
+  order.RunOperationsForTest(bio, cali);
 }
 
 void OrderWithTwoDifferentTest(const Sample &sample) {
@@ -61,26 +53,18 @@ void OrderWithTwoDifferentTest(const Sample &sample) {
   micro->SetPropertyB("B2");
   micro->SetPropertyMicro("Micro");
 
+  std::cout << "Running order operations!" << std::endl;
   // Add calculation to Hematology test
   std::shared_ptr<Calculation> calcul = std::make_shared<Calculation>();
-  order.AddOperationForTest(hema, calcul);
+  order.RunOperationsForTest(hema, calcul);
 
   // Add quality control to Hematology test
   std::shared_ptr<Quality> qa = std::make_shared<Quality>();
-  order.AddOperationForTest(hema, qa);
+  order.RunOperationsForTest(hema, qa);
 
   // Add quality control to Microbiology test
   std::shared_ptr<Calibration> calib = std::make_shared<Calibration>();
-  order.AddOperationForTest(micro, calib);
-
-  // Run order
-  std::cout << "Running order operations:" << std::endl;
-  order.RunOperations();
-
-  // Check order results
-  std::cout << "Operations "
-            << ((order.GetResults()) ? "finished successfully!" : "failed!")
-            << std::endl;
+  order.RunOperationsForTest(micro, calib);
 }
 
 void OrderWithTwoEqualTest(const Sample &sample) {
@@ -103,27 +87,19 @@ void OrderWithTwoEqualTest(const Sample &sample) {
   immu2->SetPropertyB("B2");
   immu2->SetPropertyImmu("Immu2");
 
+  std::cout << "Running order operations!" << std::endl;
   // Add calculation to both Immunology test
   std::shared_ptr<Calculation> calcul = std::make_shared<Calculation>();
-  order.AddOperationForTest(immu1, calcul);
-  order.AddOperationForTest(immu2, calcul);
+  order.RunOperationsForTest(immu1, calcul);
+  order.RunOperationsForTest(immu2, calcul);
 
   // Add quality control to first Immunology test
   std::shared_ptr<Quality> qa = std::make_shared<Quality>();
-  order.AddOperationForTest(immu1, qa);
+  order.RunOperationsForTest(immu1, qa);
 
   // Add quality control to second Immunology test
   std::shared_ptr<Calibration> calib = std::make_shared<Calibration>();
-  order.AddOperationForTest(immu2, calib);
-
-  // Run order
-  std::cout << "Running order operations:" << std::endl;
-  order.RunOperations();
-
-  // Check order results
-  std::cout << "Operations "
-            << ((order.GetResults()) ? "finished successfully!" : "failed!")
-            << std::endl;
+  order.RunOperationsForTest(immu2, calib);
 }
 
 int main() {

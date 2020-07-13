@@ -3,8 +3,8 @@
 #include <memory>
 #include <vector>
 
-#include "Operations/Operation.h"
-#include "Tests/Test.h"
+#include "Operations/IOperation.h"
+#include "Tests/ITest.h"
 
 // Sample definition should be located in a different module (i.e SampleModule)
 // but for the sake of simplicity I will leave it here
@@ -18,15 +18,9 @@ class Order {
   Order(const Sample &sample);
   ~Order();
 
-  typedef std::shared_ptr<Test> pTest;
-  typedef std::shared_ptr<Operation> pOperation;
-
-  bool GetResults() const;
-  void AddOperationForTest(pTest, pOperation);
-  void RunOperations();
+  void RunOperationsForTest(std::shared_ptr<ITest>,
+                            std::shared_ptr<IOperation>);
 
  private:
-  bool m_results;
   Sample m_sample;
-  std::vector<std::tuple<pTest, pOperation>> m_operations;
 };

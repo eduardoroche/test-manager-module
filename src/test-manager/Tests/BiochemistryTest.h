@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Test.h"
+#include "ITest.h"
 
-class BiochemistryTest : public Test {
+class BiochemistryTest : public ITest {
  public:
   BiochemistryTest();
   ~BiochemistryTest();
 
-  bool accept(Operation *op) const override;
+  void accept(IOperation *op) const override;
 
   std::string GetPropertyA() const override;
   std::string GetPropertyB() const override;
