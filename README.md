@@ -20,9 +20,9 @@ https://github.com/jonasrodriguez/test-manager-module/blob/master/TestModuleUML.
 https://github.com/jonasrodriguez/test-manager-module/blob/master/RefactoringSteps.md
 
 ### How to run project
-Test manager module has been developed using c++ standard, solo only a c++14 compiler and cmake are needed to deploy and build it.  
-The module code it's not runnable, but you run the test/test-manager that covers all test and operations implemented.  
+Test manager module has been developed using c++ standard, so only a c++14 compiler and cmake are needed to deploy and build it.  
 You can use gcc on linux or winGW on windows, and download cmake from (https://cmake.org/download/).  
+The module code it's not runnable, but you run the test/test-manager that covers all test and operations implemented.  
 If you want to skip the compilation you can also check the test run results on the travis log (https://travis-ci.org/github/jonasrodriguez/test-manager-module).  
 Once you have installed the cmake and c++ compiler, you can build the project following this steps:  
 ```
