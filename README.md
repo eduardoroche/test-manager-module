@@ -4,7 +4,7 @@
 ### Proposed project structure rationale
 
 To create the test-manager-module structure I decided to use the Visitor pattern.  
-Visitor is not a super popular pattern due its narrow applicability, but in my opinion, it is perfect for this module. One of the principal benefits of the visitor pattern is the ability define a new operation (also called visitor) without changing the classes of the Test on which it operates.  
+Visitor is not a super popular pattern due its narrow applicability, but in my opinion, it is perfect for this module. One of the principal benefits of the visitor pattern is the ability to define a new operation (also called visitor) without changing the classes of the Test on which it operates.  
 I found this pattern superior to other for this particular scenario, because the use of the double dispatch means that you won’t need any conditional logic to execute the proper operation for a specific test.  
 Using the Visitor pattern, we can solve the main concerns of this use case:  
 * Extensibility: As mentioned above, new operations can be added without modifying the test models. Creating a new operation class that derives from IOperation interface is the only thing you need to do.  
