@@ -5,6 +5,8 @@
 
 ### UML Diagram
 
+https://github.com/jonasrodriguez/test-manager-module/blob/master/TestModuleUML.png
+
 ### High level refactoring strategy
 
 https://github.com/jonasrodriguez/test-manager-module/blob/master/RefactoringSteps.md
