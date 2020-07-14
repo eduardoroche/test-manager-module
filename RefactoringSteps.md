@@ -16,7 +16,7 @@ Running and debugging the module to check the callstack during use cases. This w
 Another useful approach to understand the code is study the module I/O… analyzing whatever input output we have (Like UI, or file system) can help a lot.
 ## During
 ### Decoupling
-A common occurrence in legacy code is having long heavy methods and structures. Splitting these into smaller ones is good way to understand the code and identify critical structures (Adding new auxiliar methods is also a good idea sometimes).  
+A common occurrence in legacy code is having long heavy methods and structures. Splitting these into smaller ones is good way to understand the code and identify critical structures (Adding new auxiliar methods may be a good idea in some scenarios).  
 Decoupling can also be done within process and data. A probable scenario is process accessing data contained on other different process. Add entities to this data and organize the access between these processes and the data is a good way to identify and understand structures.  
 This approach could conflict with DDD good practices however, splitting data and process is known as Anemic Domain model antipattern.
 ### Scope
